@@ -22,11 +22,11 @@ d’extraire rapidement les informations clés des phrases NMEA `$GPRMC`,
 ## Installation
 
 1. **Via le Library Manager**  (après publication)  
-   `Sketch ▸ Include Library ▸ Manage Libraries… ▸ TrameNMEA`
+   `Sketch ▸ Include Library ▸ Manage Libraries… ▸ Librairie-GPS-trames-RMC-GGA-GSA-main`
 
 2. **Manuellement**  
    - Téléchargez / clonez ce dépôt.  
-   - Copiez le dossier **`TrameNMEA`** dans *Documents/Arduino/libraries*.
+   - Copiez le dossier **`Librairie-GPS-trames-RMC-GGA-GSA-main`** dans *Documents/Arduino/libraries*.
 
 ---
 
