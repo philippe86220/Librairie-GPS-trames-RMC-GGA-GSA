@@ -90,11 +90,11 @@ void loop() {
 ```
 ## API
 
-| Méthode                       | Effet                                                    |
+| Méthode                       | Effet                                                     |
 | -----------------------------  | -------------------------------------------------------- |
 | `Trame(char* uneTrame)`        | Constructeur (une seule instance recommandée).           |
 | `void setSentence(char* nmea)` | Pointeur vers la nouvelle phrase NMEA.                   |
-| `bool extrait()`               | Identifie et parse ; renvoie `false` si échec. |
+| `bool extrait()`               | Identifie et parse ; renvoie `false` si échec.           |
 | `bool estValide() const`       | `true` si `valid == 'A'` **et** `fixQuality > 0`.        |
 | `Type type() const`            | Enum `GPRMC / GPGGA / GPGSA / INCONNU`.                  |
 
