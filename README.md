@@ -15,7 +15,6 @@ d’extraire rapidement les informations clés des phrases NMEA `$GPRMC`,
 - [Exemple minimal](#exemple-minimal)
 - [API](#api)
 - [Structure interne](#structure-interne)
-- [Tests unitaires](#tests-unitaires)
 - [Licence et crédits](#licence-et-crédits)
 
 ---
@@ -45,9 +44,8 @@ des récepteurs).
 
 
 ## Exemple minimal
-```
-cpp
-#include <TrameNMEA.h>
+```cpp
+#include "trame.h"
 #include <SoftwareSerial.h>
 
 constexpr uint8_t  RX = 2, TX = 3;
@@ -67,7 +65,11 @@ bool getSentence() {
   while (gpsUART.available()) {
     char c = gpsUART.read();
     if (c == '\r')              continue;
-    if (c == '\n') { sentence[i] = '\0'; i = 0; return true; }
+    if (c == '\n') {
+      sentence[i] = '\0';
+      i = 0;
+      return true;
+    }
     if (i < NMEA_MAX) sentence[i++] = c;
   }
   return false;
@@ -76,12 +78,16 @@ bool getSentence() {
 void loop() {
   if (getSentence()) gps.setSentence(sentence);
   if (gps.extrait() && gps.estValide()) {
+    Serial.print(gps.jour); Serial.print(F(":")); Serial.print(gps.mois); Serial.print(F(":")); Serial.println(2000 + gps.annee);
+    uint8_t hl = (gps.heure + Trame::UTC_OFFSET) % 24;
+    Serial.print(hl); Serial.print(F(":")); Serial.print(gps.minute); Serial.print(F(":")); Serial.println(gps.seconde);
     Serial.print(F("Latitude : ")); Serial.println(gps.latitude, 6);
-    Serial.print(F("Longitude: ")); Serial.println(gps.longitude, 6);
+    Serial.print(F("Longitude: ")); Serial.print(gps.longitude, 6);
+    Serial.println(F("\n"));
   }
 }
 ```
-API
+## API
 
 | Méthode                       | Effet                                                    |
 | ----------------------------- | -------------------------------------------------------- |
