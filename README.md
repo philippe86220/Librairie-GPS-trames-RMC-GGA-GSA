@@ -91,12 +91,12 @@ void loop() {
 ## API
 
 | Méthode                       | Effet                                                    |
-| ----------------------------- | -------------------------------------------------------- |
-| `Trame(char* str = nullptr)`  | Constructeur (une seule instance recommandée).           |
-| `void setSentence(char* str)` | Pointeur vers la nouvelle phrase NMEA.                   |
-| `bool extrait()`              | Tokenise, identifie et parse ; renvoie `false` si échec. |
-| `bool estValide() const`      | `true` si `valid == 'A'` **et** `fixQuality > 0`.        |
-| `Type type() const`           | Enum `GPRMC / GPGGA / GPGSA / INCONNU`.                  |
+| -----------------------------  | -------------------------------------------------------- |
+| `Trame(char* uneTrame)`        | Constructeur (une seule instance recommandée).           |
+| `void setSentence(char* nmea)` | Pointeur vers la nouvelle phrase NMEA.                   |
+| `bool extrait()`               | Identifie et parse ; renvoie `false` si échec. |
+| `bool estValide() const`       | `true` si `valid == 'A'` **et** `fixQuality > 0`.        |
+| `Type type() const`            | Enum `GPRMC / GPGGA / GPGSA / INCONNU`.                  |
 
 
 ## Champs publics mis à jour
