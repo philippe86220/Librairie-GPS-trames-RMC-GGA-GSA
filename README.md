@@ -93,8 +93,29 @@ API
 
 
 ## Champs publics mis à jour
-. latitude, longitude, vitesse, route
-. jour, mois, annee, heure, minute, seconde
-. fixQuality, numSat, hdop, altitude, geoidSeparation
-. selMode, fixType, satID[12], pdop, hdop_gsa, vdop
-Structure interne
+
+- latitude, longitude, vitesse, route
+- jour, mois, annee, heure, minute, seconde
+- fixQuality, numSat, hdop, altitude, geoidSeparation
+- selMode, fixType, satID[12], pdop, hdop_gsa, vdop
+
+## Structure interne
+```text
+buffers statiques  ─┬─ _bufRMC[12][20]
+                    ├─ _bufGGA[14][20]
+                    └─ _bufGSA[17][20]
+
+Trame::extrait()  → détecte type → choisit buffer → découpe → parseRMC/GGA/GSA
+```
+
+
+## Licence et crédits
+MIT Licence – voir LICENSE.
+Certaines parties de la conception et de la documentation ont été réalisées
+avec l’assistance de ChatGPT (OpenAI).
+Les tests, validations et décisions finales ont été effectués manuellement.
+
+
+---
+
+
