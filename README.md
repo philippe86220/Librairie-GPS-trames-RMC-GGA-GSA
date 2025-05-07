@@ -119,7 +119,7 @@ Trame::extrait()  → détecte type → choisit buffer → découpe → parseRMC
 ## Licence et crédits
 MIT Licence – voir LICENSE.
 Certaines parties de la conception et de la documentation ont été réalisées
-avec l’assistance de ChatGPT (OpenAI).
+**avec l’assistance de ChatGPT (OpenAI).**
 Les tests, validations et décisions finales ont été effectués manuellement.
 
 
