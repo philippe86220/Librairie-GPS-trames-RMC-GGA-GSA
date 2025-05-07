@@ -41,7 +41,7 @@ d’extraire rapidement les informations clés des phrases NMEA `$GPRMC`,
 Assurez‑vous que le module émet en 9600 bauds (valeur par défaut de la plupart
 des récepteurs).
 
-Type de module utilisé pour la mise en oeure de la librairie :
+Type de module utilisé pour la mise en oeuvre de la librairie :
 https://www.gotronic.fr/art-module-gps-tel0094-25732.htm
 
 ## Exemple minimal
