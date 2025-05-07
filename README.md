@@ -46,7 +46,7 @@ https://www.gotronic.fr/art-module-gps-tel0094-25732.htm
 
 ## Exemple minimal
 ```cpp
-#include "trame.h"
+#include <trame.h>
 #include <SoftwareSerial.h>
 
 constexpr uint8_t  RX = 2, TX = 3;
